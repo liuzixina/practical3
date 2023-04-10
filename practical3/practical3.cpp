@@ -1,9 +1,26 @@
 ﻿#include <iostream> 
+#include <string>
 #include "myname.h"
+using namespace std;
 
+
+
+class MyName
+{ public:
+	MyName(string,string);
+  private:
+	  string firstName, lastName; 
+};
 int main()
 {
-	MyName name{ "Matt", "Selway" }; name.show(std::cout);
-	1111111
+	string s1;
+
+	MyName name{ "Zixin", "Liu" }; 
+	name.show(std::cout);
+	4
 	return 0;
-}gggggggggg
+}
+
+MyName::MyName(string, string)
+{
+}
