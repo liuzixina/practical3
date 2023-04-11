@@ -11,7 +11,7 @@ class MyName
 	MyName();
 	MyName(string, string, string);
 	void show(ostream&);
-	MyName readFrom(istream&);
+	MyName& readFrom(istream&);
   private:
 	  string firstName, lastName,middleName; 
 };
@@ -34,7 +34,7 @@ MyName::MyName(std::string s1, std::string s2, std::string s3)
 void MyName::show(ostream&  cout) {
 	cout << firstName <<middleName<< lastName << endl;
 }
-MyName MyName::readFrom(istream& cin) {
+MyName& MyName::readFrom(istream& cin) {
 	cout << "Please enter the first name:";
 	cin >> firstName;
 	cout << "Please enter the middle name:";
