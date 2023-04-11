@@ -7,9 +7,9 @@ using namespace std;
 
 class MyName
 { public:
-	MyName(string,string);
+	MyName(string,string)=delete;
 	MyName();
-	MyName(string, string, string);
+	MyName(string, string, string)=delete;
 	void show(ostream&);
 	MyName& readFrom(istream&);
   private:
