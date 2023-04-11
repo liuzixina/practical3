@@ -18,6 +18,7 @@ MyName::MyName(std::string s1, std::string s2)
 	lastName = s2;
 }
 void MyName::show(ostream&  cout) {
+	cout << firstName << lastName << endl;
 }
 int main()
 {
