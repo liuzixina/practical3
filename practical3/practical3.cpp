@@ -31,7 +31,7 @@ MyName::MyName(std::string s1, std::string s2, std::string s3)
 	lastName = s2;
 	middleName = s3;
 }
-void MyName::show(ostream&  cout) {
+void MyName::show(ostream& cout) {
 	cout << firstName <<middleName<< lastName << endl;
 }
 MyName& MyName::readFrom(istream& cin) {
