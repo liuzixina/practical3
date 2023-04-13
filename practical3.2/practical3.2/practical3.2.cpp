@@ -98,9 +98,19 @@ Square::Square(Point x, int y)
 }
 int main()
 {
-	Point a = {2,2};
-	Square b = { a,2 };
-	b.topLeft().show(cout);
+	std::cout << "enter the size:";
+	int dimension;
+	std::cin >> dimension;
+	std::cout << "enter the midpoint x and y:";
+	float x, y;
+	std::cin >> x>>y;
+	Point thepoint = {x,y};
+	Square square = { thepoint,2 };
+	std::cout << "\nthe square 's topleft is (" << square.topLeft().getX() << "," << square.topLeft().getY() << ")\n";
+	std::cout << "\nthe square 's topright is (" << square.topRight().getX() << "," << square.topRight().getY() << ")\n";
+	std::cout << "\nthe square 's bottomleft is (" << square.bottomLeft().getX() << "," << square.bottomLeft().getY() << ")\n";
+	std::cout << "\nthe square 's bottomright is (" << square.bottomRight().getX() << "," << square.bottomRight().getY() << ")\n";
+
 }
 
 
