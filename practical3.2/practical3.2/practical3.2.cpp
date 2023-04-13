@@ -77,7 +77,7 @@ public:
 	}
 	Point bottomLeft(void) {
 		float x1, y1;
-		x1 = midpoint.getX() + dimension / 2;
+		x1 = midpoint.getX() - dimension / 2;
 		y1 = midpoint.getY() + dimension / 2;
 		Point bottomleft = { x1,y1 };
 		return bottomleft;
@@ -110,7 +110,14 @@ int main()
 	std::cout << "\nthe square 's topright is (" << square.topRight().getX() << "," << square.topRight().getY() << ")\n";
 	std::cout << "\nthe square 's bottomleft is (" << square.bottomLeft().getX() << "," << square.bottomLeft().getY() << ")\n";
 	std::cout << "\nthe square 's bottomright is (" << square.bottomRight().getX() << "," << square.bottomRight().getY() << ")\n";
-
+	float newx, newy;
+	std::cout << "enter the new midpoint x and y:";
+	std::cin >> newx>>newy;
+	square.translate(newx, newy);
+	std::cout << "\nthe square 's topleft is (" << square.topLeft().getX() << "," << square.topLeft().getY() << ")\n";
+	std::cout << "\nthe square 's topright is (" << square.topRight().getX() << "," << square.topRight().getY() << ")\n";
+	std::cout << "\nthe square 's bottomleft is (" << square.bottomLeft().getX() << "," << square.bottomLeft().getY() << ")\n";
+	std::cout << "\nthe square 's bottomright is (" << square.bottomRight().getX() << "," << square.bottomRight().getY() << ")\n";
 }
 
 
