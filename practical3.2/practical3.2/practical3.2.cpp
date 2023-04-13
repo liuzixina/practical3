@@ -5,6 +5,7 @@ using namespace std;
 
 
 
+
 class Point
 {
 private:
@@ -38,31 +39,68 @@ Point::Point(float x1,float y1)
 }
 Point::Point()
 {
-}
+}                                             
 
 void Point::show(ostream& cout) {
 	cout << "x is :"<<x<<"  y is :"<<y;
 }
+
+class Square
+{
+private:
+	Point midpoint;
+	int dimension;
+
+public:
+	
+	Square(Point,int);
+	Point topLeft(void) {
+		float x1, y1;
+		x1 = midpoint.getX() - dimension / 2;
+		y1 = midpoint.getY() - dimension / 2;
+		Point topleft = { x1,y1 };
+		return topleft;
+	}
+	Point topRight(void) {
+		float x1, y1;
+		x1 = midpoint.getX() + dimension / 2;
+		y1 = midpoint.getY() - dimension / 2;
+		Point topright = { x1,y1 };
+		return topright;
+	}
+	Point bottomRight(void) {
+		float x1, y1;
+		x1 = midpoint.getX() + dimension / 2;
+		y1 = midpoint.getY() + dimension / 2;
+		Point bottomright = { x1,y1 };
+		return bottomright;
+	}
+	Point bottomLeft(void) {
+		float x1, y1;
+		x1 = midpoint.getX() + dimension / 2;
+		y1 = midpoint.getY() + dimension / 2;
+		Point bottomleft = { x1,y1 };
+		return bottomleft;
+	}
+	void translate(Point point) {
+		midpoint.setX(point.getX());
+		midpoint.setY(point.getY());
+	}
+	void translate(float x1,float y1) {
+		midpoint.setX(x1);
+		midpoint.setY(y1);
+	}
+};
+Square::Square(Point x, int y)
+{
+	midpoint = x;
+	dimension = y;
+}
 int main()
 {
-	Point point1 = {};
-	point1 = point1.origin;
-	point1.show(std::cout);
-	cout << "\nmodify the point1\n";
-	point1.setX(9);
-	point1.origin.show(std::cout);
-	cout << "the value of origin is not changed\n";
-	point1.show(std::cout);
-	cout << "Modify the variable from above to be a reference.";
-	(&point1)->setX(6);
-	cout << "\n";
-	(&point1)->show(std::cout);
-	cout << "\n";
-	point1.origin.show(std::cout);
-	cout << "\nthe value of origin is not changed\n";
-	cout << "\nModify the variable from above to be a const reference\n";
-	const Point &a= point1;
-	cout << "it is error because const reference is not allow to modify the value.";
+	Point a = {2,2};
+	Square b = { a,2 };
+	b.topLeft().show(cout);
 }
 
 
