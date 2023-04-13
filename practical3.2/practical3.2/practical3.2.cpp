@@ -97,7 +97,25 @@ Square::Square(Point x, int y)
 	dimension = y;
 }
 int main()
-{
+{   
+	Point point1 = {};
+	point1 = point1.origin;
+	point1.show(std::cout);
+	cout << "\nmodify the point1\n";
+	point1.setX(9);
+	point1.origin.show(std::cout);
+	cout << "the value of origin is not changed\n";
+	point1.show(std::cout);
+	cout << "Modify the variable from above to be a reference.";
+	(&point1)->setX(6);
+	cout << "\n";
+	(&point1)->show(std::cout);
+	cout << "\n";
+	point1.origin.show(std::cout);
+	cout << "\nthe value of origin is not changed\n";
+	cout << "\nModify the variable from above to be a const reference\n";
+	const Point &a = point1;
+	cout << "it is error because const reference is not allow to modify the value.";
 	std::cout << "enter the size:";
 	int dimension;
 	std::cin >> dimension;
